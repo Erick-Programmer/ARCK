@@ -1,0 +1,5 @@
+#!/bin/bash
+BRed='\e[1;31m'
+BBlue='\e[1;34m'
+BWhite='\e[1;37m'
+chmod +x files/inicio.bh && ./files/inicio.bh
