@@ -1,0 +1,101 @@
+#!/bin/bash
+#Programas/
+BRed='\e[1;31m'
+BBlue='\e[1;34m'
+BWhite='\e[1;37m'
+BYellow='\e[1;33m'
+./files/logo.bh 2
+echo -ne $BRed"   % ${BWhite}"
+read -p "" ELECCION
+navegadores() {
+	if [[ $ELECCION -eq 1 ]]; then
+		./files/logo.bh -1
+		echo -e $BYellow"          	     Navegadores: "
+		echo ""
+		echo -e $BWhite"   1. Firefox."
+		echo -e $BWhite"   2. Firefox Developer Edition."
+		echo -e $BWhite"   3. Opera."
+		echo -e $BWhite"   4. Volver al menú de inicio."
+		echo ""
+		echo -ne $BRed"   % ${BWhite}"
+		read -p "" NAVEGADOR
+	fi
+	#	FIREFOX
+
+	if [[ NAVEGADOR -eq 1 ]]; then
+		clear
+		pacman -Sy --noconfirm
+		sudo pacman -S firefox
+	fi
+	#	FIREFOX DEV
+
+	if [[ NAVEGADOR -eq 2 ]]; then
+		clear
+		pacman -Sy --noconfirm
+		pacman -S --noconfirm firefox-developer-edition
+	fi
+	#	OPERA
+	if [[ NAVEGADOR -eq 3 ]]; then
+		clear
+		pacman -Sy --noconfirm
+		pacman -S opera --noconfirm
+	fi
+	if [[ NAVEGADOR -eq 4 ]]; then
+		clear
+	./arck.bh
+	fi
+}
+
+#						EDITORES
+editores() {
+	if [[ $ELECCION -eq 2 ]]; then
+		./files/logo.bh -1
+		echo -e $BYellow"          	Editores de texto: "
+		echo ""
+		echo -e $BWhite"   1. Visual Studio Code."
+		echo -e $BWhite"   2. Atom."
+		echo -e $BWhite"   3. VIM."
+		echo -e $BWhite"   4. Neovim."
+		echo -e $BWhite"   5. Nano."
+		echo -e $BWhite"   6. Volver al menú de inicio."
+		echo ""
+		echo -ne $BRed"   % ${BWhite}"
+		read -p "" EDITXT
+	fi
+	#	VS Code
+	if [[ EDITXT -eq 1 ]]; then
+		clear
+		pacman -Sy --noconfirm
+		pacman -S --noconfirm visual-studio-code-bin
+	fi
+	#	Atom
+	if [[ EDITXT -eq 2 ]]; then
+		clear
+		yay -Sy --noconfirm
+		yay -S --noconfirm atom
+	fi
+	#	VIM
+	if [[ EDITXT -eq 3 ]]; then
+		clear
+		pacman -Sy --noconfirm
+		pacman -S vim --noconfirm
+	fi
+	#	NEOVIM
+	if [[ EDITXT -eq 4 ]]; then
+		clear
+		pacman -Sy --noconfirm
+		pacman -S neovim --noconfirm
+	fi
+	#	NANO
+	if [[ EDITXT -eq 5 ]]; then
+		clear
+		pacman -Sy --noconfirm
+		pacman -S nano --noconfirm
+	fi
+	if [[ EDITXT -eq 6 ]]; then
+	clear
+	./arck.bh
+	fi
+}
+navegadores
+editores

@@ -1,0 +1,14 @@
+#!/bin/bash
+BRed='\e[1;31m'
+BWhite='\e[1;37m'
+inicio() {
+	chmod +x files/logo.bh && ./files/logo.bh 0
+	./files/logo.bh 0
+	echo -ne $BRed"   % ${BWhite}"
+	read -p "" INICIO
+	if [[ INICIO -eq 1 ]]; then
+		#Descargar el archivo programas.bh
+		chmod +x files/programas.bh && ./files/programas.bh
+	fi
+}
+inicio

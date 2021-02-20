@@ -1,0 +1,42 @@
+#!/bin/bash
+Purple='\e[0;35m'
+BYellow='\e[1;33m'
+BPurple='\e[1;35m'
+BCyan='\e[1;36m'
+BWhite='\e[1;37m'
+BGreen='\e[1;32m'
+logoI() {
+	clear
+	sleep 0.2
+	echo -e $BCyan " +${BCyan}----------------------------------------------${BCyan}+"
+	echo -e $BCyan"  |		                                ${BCyan} |"
+	echo -e "$BCyan  |$Purple    ██████╗    █████╗    ██████╗ ███╗  ██╗  ${BCyan}  |             "
+	echo -e "$BCyan  |$Purple   ██╔═══██╗  ██╔═══██╗ ██╔════╝  ██║ ██╔╝  ${BCyan}  |            "
+	echo -e "$BCyan  |$BPurple   ████████║  ██║   ██║ ██║       ████╔═╝   ${BCyan}  |               "
+	echo -e "$BCyan  |$BPurple   ██╔═══██║  ███████═╝ ██║       ████║     ${BCyan}  |               "
+	echo -e "$BCyan  |$BPurple   ██║   ██║  ██║   ██╗ ██║       ██╔╗██╗   ${BCyan}  |               "
+	echo -e "$BCyan  |$Purple   ██║   ██║  ██║   ██║  ██████╗ ███║╚╗██╗  ${BCyan}  |               "
+	echo -e "$BCyan  |$Purple   ╚═╝   ╚═╝  ╚═╝   ╚═╝  ╚═════╝ ╚══╝ ╚══╝  ${BCyan}  |               "
+	echo -e $BCyan"  |   ${BGreen}                  Beta${BCyan}                     |"
+	echo -e $BCyan " +${Bcyan}----------------------------------------------${Cyan}+"
+}
+if [[ $1 -eq -1 ]]; then
+	logoI
+fi
+if [[ $1 -eq 0 ]]; then
+	logoI
+	echo -e $BYellow"          	 Menú de inicio: "
+	echo ""
+	echo -e $BWhite"   1. Instalación de programas.      "
+	echo ""
+fi
+
+if [[ $1 -eq 2 ]]; then
+	logoI
+	echo -e $BYellow"          	     Programas: "
+	echo ""
+	echo -e $BWhite"   1. Navegadores."
+	echo ""
+	echo -e $BWhite"   2. Editores de texto."
+	echo ""
+fi
